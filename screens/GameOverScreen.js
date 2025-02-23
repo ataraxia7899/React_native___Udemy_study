@@ -1,5 +1,5 @@
 /* 게임이 종료되었을때 화면 */
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
 
 import Title from '../components/UI/Title';
 import Colors from '../util/Colors';
@@ -33,6 +33,8 @@ export default function GameOverScreen(props) {
 	);
 }
 
+const deviceWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
 	rootContainer: {
 		flex: 1,
@@ -50,9 +52,9 @@ const styles = StyleSheet.create({
 		fontsize: 24,
 	},
 	ImageContainer: {
-		width: 300, // 이미지의 너비
-		height: 300, // 이미지의 높이
-		borderRadius: 200, // 이미지 모서리의 반지름
+		width: deviceWidth < 380 ? 150 : 300, // 이미지의 너비
+		height: deviceWidth < 380 ? 150 : 300, // 이미지의 높이
+		borderRadius: deviceWidth < 380 ? 75 : 150, // 이미지 모서리의 반지름
 		borderWidth: 3, // 이미지 테두리의 너비
 		borderColor: Colors.primary800, // 이미지 테두리의 색상
 		overflow: 'hidden', // 이미지의 넘치는 부분을 숨김
