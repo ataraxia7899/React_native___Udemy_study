@@ -19,5 +19,6 @@ const styles = StyleSheet.create({
 		borderColor: Colors.accent500,
 		padding: 12,
 		marginHorizontal: 10,
+		maxWidth: '80%', // 최대 너비 설정정
 	},
 });

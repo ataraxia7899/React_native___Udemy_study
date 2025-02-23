@@ -42,7 +42,7 @@ export default function StartGameScreen(props) {
 	return (
 		<KeyboardDismiss>
 			<View style={styles.rootContainer}>
-				<Title>게임 시작</Title>
+				<Title>게임 시작화면</Title>
 				<View style={styles.viewstyle}>
 					<View style={styles.ViewInputStyle}>
 						<Text style={styles.textStyle}>CPU가 맞추는 추리게임</Text>
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
 	rootContainer: {
 		flex: 1,
 		marginTop: 20,
+		alignItems: 'center',
 	},
 	viewstyle: {
 		flex: 1,

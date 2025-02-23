@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
 	ViewStyle: {
 		flex: 1,
 		marginTop: 20,
+		alignItems: 'center',
 	},
 	TextStyle: {
 		fontsize: 24,
@@ -57,6 +58,7 @@ const styles = StyleSheet.create({
 		overflow: 'hidden', // 이미지의 넘치는 부분을 숨김
 		marginVertical: 10, // 위아래 여백
 		// margin: 36, // 위아래, 좌우 여백
+		marginTop: 80, // 위 여백
 	},
 	ImageStyle: {
 		width: '100%',
@@ -73,8 +75,8 @@ const styles = StyleSheet.create({
 		color: Colors.primary500,
 	},
 	buttonContainer: {
-		width: '80%',
-		height: '10%',
+		width: '200',
+		height: '100',
 		marginTop: '2%',
 	},
 });

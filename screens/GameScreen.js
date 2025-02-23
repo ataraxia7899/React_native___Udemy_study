@@ -77,7 +77,7 @@ export default function GameScreen(props) {
 	const guessRoundsListLength = guessRounds.length;
 
 	return (
-		<View style={{ flex: 1, marginTop: 20 }}>
+		<View style={{ flex: 1, marginTop: 20, alignItems: 'center' }}>
 			<Title>CPU의 추측</Title>
 			<View style={styles.screenstyle}>
 				<NumberContainer>{currentGuess}</NumberContainer>
@@ -130,6 +130,7 @@ const styles = StyleSheet.create({
 	screenstyle: {
 		flex: 1,
 		padding: 24,
+		alignItems: 'center',
 	},
 	TextStyle: {
 		fontSize: 33,
