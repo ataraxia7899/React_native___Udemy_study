@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Alert, FlatList } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome'; // 아이콘 라이브러리
 
-import PrimaryButtom from '../components/UI/PrimaryButton';
+import PrimaryButton from '../components/UI/PrimaryButton';
 import Title from '../components/UI/Title';
 import NumberContainer from '../components/Game/NumberContainer';
 import Colors from '../util/Colors';
@@ -83,26 +83,28 @@ export default function GameScreen(props) {
 				<NumberContainer>{currentGuess}</NumberContainer>
 				<View style={styles.card}>
 					<Text style={styles.TextStyle}>
-						생각하신 숫자보다 {'\n'}크나요? 작나요?
+						생각하신 숫자보다 {'\n'}
+						<Text style={{ color: Colors.plus }}>크나요?</Text>{' '}
+						<Text style={{ color: Colors.minus }}>작나요?</Text>
 					</Text>
 					<View style={styles.buttonViewStyle}>
 						<View style={styles.buttonContainer}>
-							<PrimaryButtom
-								Press={nextGuessHandler.bind(this, '낮음')}
-								fontsize={20}
-							>
-								{/* 낮음 */}
-								<FontAwesome name="minus" size={24} color="white" />
-							</PrimaryButtom>
-						</View>
-						<View style={styles.buttonContainer}>
-							<PrimaryButtom
+							<PrimaryButton
 								Press={nextGuessHandler.bind(this, '높음')}
 								fontsize={20}
 							>
 								{/* 높음 */}
-								<FontAwesome name="plus" size={24} color="white" />
-							</PrimaryButtom>
+								<FontAwesome name="plus" size={24} color={Colors.plus} />
+							</PrimaryButton>
+						</View>
+						<View style={styles.buttonContainer}>
+							<PrimaryButton
+								Press={nextGuessHandler.bind(this, '낮음')}
+								fontsize={20}
+							>
+								{/* 낮음 */}
+								<FontAwesome name="minus" size={24} color={Colors.minus} />
+							</PrimaryButton>
 						</View>
 					</View>
 				</View>

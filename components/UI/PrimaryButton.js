@@ -24,7 +24,20 @@ export default function PrimaryButton(props) {
 				<Text
 					style={[
 						styles.buttonText,
-						props.fontsize && { fontSize: props.fontsize }, // props로 fontsize가 있으면 적용
+						props.fontsize && { fontSize: props.fontsize },
+						// props로 fontsize가 있으면 적용하고 없으면 빈 객체로 설정
+						props.color && { color: props.color },
+						// props로 color가 있으면 적용하고 없으면 빈 객체로 설정
+						props.textShadowColor && { textShadowColor: props.textShadowColor },
+						// props로 textShadowColor가 있으면 적용하고 없으면 빈 객체로 설정
+						props.textShadowRadius && {
+							textShadowRadius: props.textShadowRadius,
+						},
+						// props로 textShadowRadius가 있으면 적용하고 없으면 빈 객체로 설정
+						props.textShadowOffset && {
+							textShadowOffset: props.textShadowOffset,
+						},
+						// props로 textShadowOffset가 있으면 적용하고 없으면 빈 객체로 설정
 					]}
 				>
 					{props.children}
@@ -56,6 +69,9 @@ const styles = StyleSheet.create({
 		color: 'white', // 글씨색
 		textAlign: 'center', // 글씨 정렬
 		fontsize: 20, // 글씨 크기
+		textShadowColor: 'black',
+		textShadowRadius: 2,
+		textShadowOffset: { width: 0, height: 2 },
 	},
 	Pressed: {
 		opacity: 0.75, // 버튼이 눌렸을때 투명도도

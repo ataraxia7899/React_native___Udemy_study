@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 
 import Colors from '../../util/Colors';
 
@@ -11,6 +11,8 @@ function NumberContainer({ children }) {
 }
 
 export default NumberContainer;
+
+const deviceWidth = Dimensions.get('window').width; // 접속한 기기의 너비를 알 수 있는 Dimensions 라이브러리 사용
 
 const styles = StyleSheet.create({
 	container: {

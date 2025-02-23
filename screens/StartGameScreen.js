@@ -60,7 +60,12 @@ export default function StartGameScreen(props) {
 						/>
 						<View style={styles.buttonsContainer}>
 							<View style={styles.buttonContainer}>
-								<PrimaryButton Press={resetInputHandler}>초기화</PrimaryButton>
+								<PrimaryButton
+									color={'#4B89DC'}
+									Press={resetInputHandler}
+								>
+									초기화
+								</PrimaryButton>
 							</View>
 							<View style={styles.buttonContainer}>
 								<PrimaryButton Press={confirmInputHandler}>확인</PrimaryButton>

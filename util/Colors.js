@@ -8,6 +8,8 @@ const Colors = {
 	accent500: '#ddb52f',
 	myColor1: '#DFFF00',
 	myColor2: '#C2953D',
+	plus: '#4B89DC',
+	minus: '#F05650',
 };
 
 export default Colors;
