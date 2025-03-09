@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import CategoriesScreen from './components/screens/CategoriesScreen';
+import CategoriesScreen from './screens/CategoriesScreen';
 
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<CategoriesScreen />
 			<StatusBar style="auto" />
+			<CategoriesScreen />
 		</View>
 	);
 }
@@ -14,6 +14,6 @@ export default function App() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		marginTop: 36
+		marginTop: 36,
 	},
 });
