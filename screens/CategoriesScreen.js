@@ -3,14 +3,22 @@ import { FlatList } from 'react-native';
 import { CATEGORIES } from '../data/dummy-data';
 import CategoryGridTile from '../components/CategoryGridTile';
 
-function renderCategoryItem(itemData) {
-	return (
-		<CategoryGridTile title={itemData.item.title} color={itemData.item.color} />
-	);
-}
-// 위의 함수는 다시 렌더링 혹은 다시 생성할 필요가 없으므로 컴포넌트 함수 밖에서 정의됨
+export default function CategoriesScreen({ navigation }) {
+	function renderCategoryItem(itemData) {
+		function pressHandler() {
+			navigation.navigate('MealsOverview', { categoryId: itemData.item.id });
+			// navigate 메서드는 React Navigation이 제공하며 navigation 객체를 프로퍼티로 받는다.
+		}
 
-export default function CategoriesScreen() {
+		return (
+			<CategoryGridTile
+				title={itemData.item.title}
+				color={itemData.item.color}
+				onPress={pressHandler}
+			/>
+		);
+	}
+
 	return (
 		<FlatList
 			data={CATEGORIES}

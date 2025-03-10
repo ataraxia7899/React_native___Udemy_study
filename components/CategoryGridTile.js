@@ -1,6 +1,10 @@
 import { Pressable, View, Text, StyleSheet, Platform } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+// 스크린으로 등록되었는지 상관없이 navigation 객체를 제공함
 
 export default function CategoryGridTile(props) {
+	const navigation = useNavigation();
+
 	return (
 		<View style={styles.gridItem}>
 			<Pressable
@@ -10,6 +14,7 @@ export default function CategoryGridTile(props) {
 					pressed && styles.buttonPressed,
 				]}
 				// 참일 경우 스타일에 buttonPressed를 추가
+				onPress={props.onPress}
 			>
 				<View style={[styles.innerContainer, { backgroundColor: props.color }]}>
 					<Text style={styles.title}>{props.title}</Text>
